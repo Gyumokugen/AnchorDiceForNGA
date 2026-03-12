@@ -1,200 +1,82 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>790</width>
-    <height>599</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Fight Simulator</string>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>421</width>
-      <height>511</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gl_status">
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>Health</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Defense</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Agility</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Strength</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Intelligence</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Name</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Attack</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QPushButton" name="pb_roll">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>510</y>
-      <width>79</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Roll</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="pte_output">
-    <property name="geometry">
-     <rect>
-      <x>420</x>
-      <y>0</y>
-      <width>371</width>
-      <height>511</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_test">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>510</y>
-      <width>79</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Test(10000)</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_copy">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>510</y>
-      <width>79</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Copy</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_create_enemy">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>510</y>
-      <width>111</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>旗鼓相当的对手</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="le_target_winrate">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>516</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pb_character_card">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>510</y>
-      <width>79</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>角色卡</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>790</width>
-     <height>33</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
- </widget>
- <resources/>
- <connections/>
-</ui>
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'fight.ui'
+##
+## Created by: Qt User Interface Compiler version 6.9.3
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QGridLayout, QLineEdit,
+    QMainWindow, QMenuBar, QPlainTextEdit, QPushButton,
+    QSizePolicy, QStatusBar, QWidget)
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(790, 599)
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.gridLayoutWidget = QWidget(self.centralwidget)
+        self.gridLayoutWidget.setObjectName(u"gridLayoutWidget")
+        self.gridLayoutWidget.setGeometry(QRect(0, 0, 421, 511))
+        self.gl_status = QGridLayout(self.gridLayoutWidget)
+        self.gl_status.setObjectName(u"gl_status")
+        self.gl_status.setContentsMargins(0, 0, 0, 0)
+        self.pb_roll = QPushButton(self.centralwidget)
+        self.pb_roll.setObjectName(u"pb_roll")
+        self.pb_roll.setGeometry(QRect(90, 510, 79, 31))
+        self.pte_output = QPlainTextEdit(self.centralwidget)
+        self.pte_output.setObjectName(u"pte_output")
+        self.pte_output.setGeometry(QRect(420, 0, 371, 511))
+        self.pb_test = QPushButton(self.centralwidget)
+        self.pb_test.setObjectName(u"pb_test")
+        self.pb_test.setGeometry(QRect(200, 510, 79, 31))
+        self.pb_copy = QPushButton(self.centralwidget)
+        self.pb_copy.setObjectName(u"pb_copy")
+        self.pb_copy.setGeometry(QRect(590, 510, 79, 31))
+        self.pb_create_enemy = QPushButton(self.centralwidget)
+        self.pb_create_enemy.setObjectName(u"pb_create_enemy")
+        self.pb_create_enemy.setGeometry(QRect(300, 510, 111, 31))
+        self.le_target_winrate = QLineEdit(self.centralwidget)
+        self.le_target_winrate.setObjectName(u"le_target_winrate")
+        self.le_target_winrate.setGeometry(QRect(410, 520, 81, 20))
+        self.pb_character_card = QPushButton(self.centralwidget)
+        self.pb_character_card.setObjectName(u"pb_character_card")
+        self.pb_character_card.setGeometry(QRect(500, 510, 79, 31))
+        self.cb_gwent = QCheckBox(self.centralwidget)
+        self.cb_gwent.setObjectName(u"cb_gwent")
+        self.cb_gwent.setGeometry(QRect(10, 520, 78, 20))
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(MainWindow)
+        self.menubar.setObjectName(u"menubar")
+        self.menubar.setGeometry(QRect(0, 0, 790, 33))
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(MainWindow)
+        self.statusbar.setObjectName(u"statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Fight Simulator", None))
+        self.pb_roll.setText(QCoreApplication.translate("MainWindow", u"Roll", None))
+        self.pb_test.setText(QCoreApplication.translate("MainWindow", u"Test(10000)", None))
+        self.pb_copy.setText(QCoreApplication.translate("MainWindow", u"Copy", None))
+        self.pb_create_enemy.setText(QCoreApplication.translate("MainWindow", u"\u65d7\u9f13\u76f8\u5f53\u7684\u5bf9\u624b", None))
+        self.pb_character_card.setText(QCoreApplication.translate("MainWindow", u"\u89d2\u8272\u5361", None))
+        self.cb_gwent.setText(QCoreApplication.translate("MainWindow", u"Gwent", None))
+    # retranslateUi
 

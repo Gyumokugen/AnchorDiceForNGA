@@ -33,21 +33,23 @@ def import_ui_event():
 
 
 def import_ui_fight():
-    if getattr(sys, "frozen", False):
-        from ui_fight import Ui_MainWindow
-        return Ui_MainWindow
-    else:
-        ui_file = "fight.ui"
-
-        if not os.path.exists(ui_file):
-            raise FileNotFoundError(f"{ui_file} 不存在")
-
-        generate_ui_py(ui_file)
-
-        if "ui_fight" in sys.modules:
-            del sys.modules["ui_fight"]
-        from ui_fight import Ui_MainWindow
-        return Ui_MainWindow
+    from ui_fight import Ui_MainWindow
+    return Ui_MainWindow
+    # if getattr(sys, "frozen", False):
+    #     from ui_fight import Ui_MainWindow
+    #     return Ui_MainWindow
+    # else:
+    #     ui_file = "fight.ui"
+    #
+    #     if not os.path.exists(ui_file):
+    #         raise FileNotFoundError(f"{ui_file} 不存在")
+    #
+    #     generate_ui_py(ui_file)
+    #
+    #     if "ui_fight" in sys.modules:
+    #         del sys.modules["ui_fight"]
+    #     from ui_fight import Ui_MainWindow
+    #     return Ui_MainWindow
 
 
 def try_int(v):

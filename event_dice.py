@@ -5,6 +5,7 @@ from PySide6.QtWidgets import (
 import sys
 import Methods
 import random
+import time
 
 _rng = random.Random()
 
@@ -153,7 +154,7 @@ class MyWindow(QMainWindow):
             if r >= 96:
                 text += " 大成功！\n"
 
-        else:
+        elif self.ui.rb_1.isChecked():
             weights = [tb.text() for tb in self.weight_le]
             texts = [tb.text() for tb in self.choice_le]
             valid = _prepare_weight_data(weights, texts)
@@ -174,8 +175,40 @@ class MyWindow(QMainWindow):
                     text += "大成功！"
                 else:
                     text += "大失败！"
-        text += "[/quote]"
+
+        elif self.ui.rb_2.isChecked():
+            text = ""
+            try:
+                number = int(self.ui.le_dice_count.text().strip())
+            except ValueError:
+                number = 1
+            try:
+                dice = int(self.ui.le_dice_size.text().strip())
+            except ValueError:
+                dice = 1
+            try:
+                base = int(self.ui.le_dice_base.text().strip())
+            except ValueError:
+                base = 0
+            if base != 0:
+                text = f"{base} "
+
+            sum_r = base
+
+            for i in range(number):
+                r = _rng.randint(1, dice)
+                text += f"+{r}(d{dice}) "
+                sum_r += r
+            text += f"= {sum_r}"
+
+            if number == 1:
+                r = _rng.randint(1, dice)
+                text += f"\nd{dice} = {r}"
+
+        text += "\n[/quote]"
+        time_str = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         self.ui.pte_output.setPlainText(text)
+        self.ui.lb_update_time.setText(f"Updated In: {time_str}")
 
 
 if __name__ == "__main__":
@@ -183,8 +216,4 @@ if __name__ == "__main__":
     event = MyWindow()
     event.show()
 
-    from fight_dice import FightSimulator
-
-    fight = FightSimulator()
-    fight.show()
     sys.exit(app.exec())
