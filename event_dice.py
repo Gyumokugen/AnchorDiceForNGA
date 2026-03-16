@@ -91,10 +91,17 @@ class MyWindow(QMainWindow):
         self.initialize_addition_sign()
 
         self.ui.pb_copy.clicked.connect(self.copy_output)
+        self.ui.pb_clear.clicked.connect(self.clear_choice)
 
     def copy_output(self):
         text = self.ui.pte_output.toPlainText()
         QApplication.clipboard().setText(text)
+
+    def clear_choice(self):
+        for i in range(10):
+            if i != 9:
+                self.weight_le[i].setText("")
+                self.choice_le[i].setText("")
 
     def initialize_addition_sign(self):
         for cb in self.addition_sign:
@@ -131,8 +138,8 @@ class MyWindow(QMainWindow):
             text += f"0<--{self.tendency_text[0].text()} -- {self.tendency_text[1].text()}-->100 ||"
             for i in range(2):
                 if Methods.try_int(self.addition_value[i].text()):
-                    text += (f"{self.addition_sign[i].currentText()}{self.addition_value[i].text()} "
-                             f"{self.addition_text[i].text()}")
+                    text += (f"  ({self.addition_sign[i].currentText()}{self.addition_value[i].text()} "
+                             f"{self.addition_text[i].text()})")
             text += "\n"
 
             r = _rng.randint(1, 100)
@@ -150,9 +157,9 @@ class MyWindow(QMainWindow):
             if addition:
                 text += f" = {result} ==> {max(0, min(100, result))} "
             if r <= 5:
-                text += " 大失败！\n"
+                text += "  [b]大失败！[/b]"
             if r >= 96:
-                text += " 大成功！\n"
+                text += "  [b]大成功！[/b]"
 
         elif self.ui.rb_1.isChecked():
             weights = [tb.text() for tb in self.weight_le]
@@ -166,15 +173,15 @@ class MyWindow(QMainWindow):
                 else:
                     text += "[b]" + _range[i] + choice[i] + "[/b]\n"
 
-            text += f"d{total} = {dice} " + f"{choice[idx]}" + "\n"
+            text += f"d{total} = {dice}" + f"  {choice[idx]}"
 
             if choice[idx] == f"大成失！":
                 r = _rng.randint(1, 2)
                 text += f"d2 = {r} "
                 if r == 1:
-                    text += "大成功！"
+                    text += " 大成功！"
                 else:
-                    text += "大失败！"
+                    text += " 大失败！"
 
         elif self.ui.rb_2.isChecked():
             text = ""
@@ -187,7 +194,7 @@ class MyWindow(QMainWindow):
             except ValueError:
                 dice = 1
             try:
-                base = int(self.ui.le_dice_base.text().strip())
+                base = int(self.ui.le_base.text().strip())
             except ValueError:
                 base = 0
             if base != 0:
